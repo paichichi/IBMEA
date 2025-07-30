@@ -8,7 +8,7 @@ seed=2023
 warm=400
 bsize=1000
 if [[ "$dataset" == *"FB"* ]]; then
-    dataset_dir='mmkb-datasets'
+    dataset_dir='mmkg'
     tau=400
 else
     dataset_dir='DBP15K'
@@ -20,8 +20,8 @@ current_datetime=$(date +"%Y-%m-%d-%H-%M")
 head_name=${current_datetime}_${dataset}
 file_name=${head_name}_bsize${bsize}_${ratio}
 echo ${file_name}
-CUDA_VISIBLE_DEVICES=${gpu_id} python3 -u src/run.py \
-    --file_dir data/${dataset_dir}/${dataset} \
+CUDA_VISIBLE_DEVICES=${gpu_id} python -u src/run.py \
+    --file_dir C:/Users/A/Documents/GitHub/data/${dataset_dir}/${dataset} \
     --pred_name ${file_name} \
     --rate ${ratio} \
     --lr .006 \
@@ -31,7 +31,7 @@ CUDA_VISIBLE_DEVICES=${gpu_id} python3 -u src/run.py \
     --check_point 50  \
     --bsize ${bsize} \
     --il \
-    --il_start 20 \
+    --il_start 500 \
     --semi_learn_step 5 \
     --csls \
     --csls_k 3 \

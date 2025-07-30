@@ -18,10 +18,10 @@ try:
     from Load import *
     from loss import *
 except:
-    from src.utils import *
-    from src.models import *
-    from src.Load import *
-    from src.loss import *
+    from utils import *
+    from models import *
+    from Load import *
+    from loss import *
 
 
 def load_img_features(ent_num, file_dir, triples, use_mean_img=False):
@@ -34,7 +34,7 @@ def load_img_features(ent_num, file_dir, triples, use_mean_img=False):
     elif "FB15K" in file_dir:
         filename = os.path.split(file_dir)[-1].upper()
         img_vec_path = (
-            "data/mmkb-datasets/"
+            "C:/Users/A/Documents/GitHub/data/mmkg/"
             + filename
             + "/"
             + filename
@@ -42,7 +42,7 @@ def load_img_features(ent_num, file_dir, triples, use_mean_img=False):
         )
     else:
         split = file_dir.split("/")[-1]
-        img_vec_path = "data/pkls/" + split + "_GA_id_img_feature_dict.pkl"
+        img_vec_path = "C:/Users/A/Documents/GitHub/data/pkls/" + split + "_GA_id_img_feature_dict.pkl"
     if use_mean_img:
         img_features = load_img(ent_num, img_vec_path)
     else:
