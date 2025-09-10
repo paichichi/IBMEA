@@ -30,8 +30,6 @@ CUDA_VISIBLE_DEVICES=${gpu_id} python -u src/run.py \
     --hidden_units "300,300,300" \
     --check_point 50  \
     --bsize ${bsize} \
-    --il \
-    --il_start 500 \
     --semi_learn_step 5 \
     --csls \
     --csls_k 3 \

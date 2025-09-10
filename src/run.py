@@ -42,7 +42,7 @@ def load_img_features(ent_num, file_dir, triples, use_mean_img=False):
         )
     else:
         split = file_dir.split("/")[-1]
-        img_vec_path = "C:/Users/A/Documents/GitHub/data/pkls/" + split + "_GA_id_img_feature_dict.pkl"
+        img_vec_path = "/home/jingfeng/xizhe/data/mmkg/pkls/" + split + "_GA_id_img_feature_dict.pkl"
     if use_mean_img:
         img_features = load_img(ent_num, img_vec_path)
     else:
@@ -611,6 +611,7 @@ class IBMEA:
             for p in self.multimodal_encoder.parameters()
             if p.requires_grad
         )
+        print("total params: ", total_params)
 
         self.optimizer = optim.AdamW(
             self.params, lr=self.args.lr, weight_decay=self.args.weight_decay
@@ -733,7 +734,7 @@ class IBMEA:
             epoch_CG += 1
             np.random.shuffle(self.train_ill)
             print("train_ill length:", len(self.train_ill))
-            for si in np.arange(0, self.train_ill.shape[0], bsize):
+            for si in tqdm(np.arange(0, self.train_ill.shape[0], bsize), desc=f"Epoch {epoch}"):
                 loss_all = 0
                 Beta = 0.001
                 print("[epoch {:d}] ".format(epoch), end="")

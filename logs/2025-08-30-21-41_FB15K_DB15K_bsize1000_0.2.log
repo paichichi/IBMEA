@@ -1,0 +1,24 @@
+loading raw data...
+total ent num: 27793, rel num: 1624
+94.56% entities have images,  follow_neirbor_img_num is 1462,  follow_all_img_num is 50
+image feature shape: torch.Size([27793, 4096])
+#left entity : 14951, #right entity: 12842
+#left entity not in train set: 12382, #right entity not in train set: 10273
+relation feature shape: torch.Size([27793, 1000])
+attribute feature shape: torch.Size([27793, 1000])
+getting a sparse tensor r_adj...
+total params:  10920606
+-----dataset summary-----
+dataset:	 C:/Users/A/Documents/GitHub/data/mmkg/FB15K_DB15K
+triple num:	 691241
+entity num:	 27793
+relation num:	 1624
+train ill num:	 2569 	test ill num:	 10277
+-------------------------
+model config is:
+Namespace(file_dir='C:/Users/A/Documents/GitHub/data/mmkg/FB15K_DB15K', rate=0.2, cuda=True, seed=2023, epochs=500, check_point=50, hidden_units='300,300,300', heads='2,2', instance_normalization=False, lr=0.006, weight_decay=0.01, dropout=0.45, attn_dropout=0.0, dist=2, csls=True, csls_k=3, il=True, semi_learn_step=5, il_start=500, bsize=1000, alpha=0.2, with_weight=1, structure_encoder='gat', projection=False, attr_dim=100, img_dim=100, name_dim=100, char_dim=100, w_gcn=True, w_rel=True, w_attr=True, w_name=False, w_char=False, w_img=True, no_diag=False, use_joint_vib=False, use_graph_vib=True, use_attr_vib=True, use_img_vib=True, use_rel_vib=True, modify_ms=False, ms_alpha=0.1, ms_beta=40.0, ms_base=0.5, Beta_g=0.001, Beta_i=0.001, Beta_r=0.01, Beta_a=0.001, inner_view_num=6, word_embedding='glove', use_project_head=False, zoom=0.1, save_path='save_pkl', pred_name='2025-08-30-21-41_FB15K_DB15K_bsize1000_0.2', hidden_size=300, intermediate_size=400, num_attention_heads=1, num_hidden_layers=1, position_embedding_type='absolute', use_intermediate=0, replay=0, neg_cross_kg=0, tau=400.0, ab_weight=0.5, use_icl=False, use_bce=False, use_bce_new=False, use_ms=False, use_nt=False, use_nce=True, use_nce_new=False, use_sheduler=False, sheduler_gamma=0.98, joint_beta=1.0, use_sheduler_cos=True, num_warmup_steps=400, num_training_steps=1000, use_mean_img=False, awloss=0, mtloss=0, graph_use_icl=1, graph_use_bce=1, graph_use_ms=1, img_use_icl=1, img_use_bce=1, img_use_ms=1, attr_use_icl=1, attr_use_bce=1, attr_use_ms=1, rel_use_icl=1, rel_use_bce=1, rel_use_ms=1, joint_use_icl=False, joint_use_bce=False, joint_use_ms=False, img_dp_ratio=1.0, fusion_id=1)
+[start training...] 
+train_ill length: 2569
+[epoch 0]  gph_bce_loss: 6.907753, gph_kld_loss: 12.546562, Beta_g: 0.001000 img_bce_loss: 6.907752, img_kld_loss: 0.023643, Beta_i: 0.001000 rel_bce_loss: 6.907753, rel_kld_loss: 5.264085, Beta_r: 0.010000 attr_bce_loss: 6.907756, attr_kld_loss: 0.027114, Beta_a: 0.001000 joint_ms_loss: 7.189602, joint_beta: 1.000000 loss_all: 34.885857,
+[epoch 0]  gph_bce_loss: 6.907763, gph_kld_loss: 12.546562, Beta_g: 0.001000 img_bce_loss: 6.907753, img_kld_loss: 0.023643, Beta_i: 0.001000 rel_bce_loss: 6.907746, rel_kld_loss: 5.264085, Beta_r: 0.010000 attr_bce_loss: 6.907756, attr_kld_loss: 0.027114, Beta_a: 0.001000 joint_ms_loss: 7.191474, joint_beta: 1.000000 loss_all: 34.887730,
+[epoch 0]  gph_bce_loss: 6.343890, gph_kld_loss: 12.546562, Beta_g: 0.001000 img_bce_loss: 6.343885, img_kld_loss: 0.023643, Beta_i: 0.001000 rel_bce_loss: 6.343875, rel_kld_loss: 5.264085, Beta_r: 0.010000 attr_bce_loss: 6.343881, attr_kld_loss: 0.027114, Beta_a: 0.001000 joint_ms_loss: 7.175587, joint_beta: 1.000000 loss_all: 32.616356,
